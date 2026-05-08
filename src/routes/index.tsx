@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Sparkles,
@@ -456,7 +456,12 @@ function Footer() {
           </span>
           <span className="font-medium text-foreground">株式会社ALCHE</span>
         </div>
-        <div>© {new Date().getFullYear()} ALCHE Inc. All rights reserved.</div>
+        <div className="flex items-center gap-6">
+          <Link to="/privacy" className="hover:text-foreground transition-colors">
+            プライバシーポリシー
+          </Link>
+          <span>© {new Date().getFullYear()} ALCHE Inc. All rights reserved.</span>
+        </div>
       </div>
     </footer>
   );
