@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "ALCHE.inc" },
+      { name: "description", content: "ALCHE App Studio is the official corporate website for ALCHE, Inc., showcasing their Android app development services." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "ALCHE.inc" },
+      { property: "og:description", content: "ALCHE App Studio is the official corporate website for ALCHE, Inc., showcasing their Android app development services." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "ALCHE.inc" },
+      { name: "twitter:description", content: "ALCHE App Studio is the official corporate website for ALCHE, Inc., showcasing their Android app development services." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f76026cd-41d8-44bf-8af0-865bbd1339a5/id-preview-b2b06aad--c6b6be53-de20-4008-8ff1-d12d4fe6d1b4.lovable.app-1778214410463.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f76026cd-41d8-44bf-8af0-865bbd1339a5/id-preview-b2b06aad--c6b6be53-de20-4008-8ff1-d12d4fe6d1b4.lovable.app-1778214410463.png" },
     ],
     links: [
       {
