@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* @custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -33,7 +33,7 @@
 :root {
   --radius: 0.75rem;
   /* Refined neutral + cool accent palette — modern SaaS / 2026 tech */
-  /* --background: oklch(0.99 0.002 250);
+  --background: oklch(0.99 0.002 250);
   --foreground: oklch(0.18 0.02 260);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0.02 260);
@@ -161,4 +161,4 @@
   .animate-float {
     animation: subtle-float 6s ease-in-out infinite;
   }
-}  */
+} 
