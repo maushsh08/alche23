@@ -265,12 +265,17 @@ function About() {
   );
 }
 
-function Service() {
   const items = [
     {
       icon: Smartphone,
       title: "Androidアプリ開発",
       desc: "企画・設計・実装・運用まで、BtoC領域のAndroidアプリをトータルで支援。",
+    },
+    {
+      icon: Globe,
+      title: "Webサイト制作",
+      desc: "原稿・画像おまかせ、10万円〜の静的サイト制作。最短1日納品。",
+      to: "/web",
     },
     {
       icon: Bot,
@@ -292,6 +297,7 @@ function Service() {
       title: "プロトタイプ開発",
       desc: "アイデアを動くカタチへ。意思決定を支える試作を素早くお届けします。",
     },
+  ];
   ];
   return (
     <Section
