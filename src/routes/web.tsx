@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroBg from "@/assets/web-hero.jpg";
 import portfolioTanaka from "@/assets/portfolio-tanaka.png";
 import portfolioHokuyou from "@/assets/portfolio-hokuyou.png";
+import logo from "@/assets/alche-logo.png";
+import { useMemo, useState } from "react";
+import {
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
@@ -75,13 +78,9 @@ function TopNav() {
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-white/80 border-b border-slate-200">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 h-14 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 text-sm font-semibold" style={{ color: NAVY }}>
-          <span
-            className="inline-flex h-7 w-7 items-center justify-center rounded-md text-white text-xs font-bold"
-            style={{ background: NAVY }}
-          >
-            A
-          </span>
-          <span>ALCHE / Web制作</span>
+          <img src={logo} alt="株式会社ALCHE" className="h-8 w-auto" />
+          <span className="text-slate-400">/</span>
+          <span>Web制作</span>
         </Link>
         <a
           href={MAILTO}
