@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroBg from "@/assets/web-hero.jpg";
+import portfolioTanaka from "@/assets/portfolio-tanaka.png";
+import portfolioHokuyou from "@/assets/portfolio-hokuyou.png";
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
@@ -36,7 +38,7 @@ export const Route = createFileRoute("/web")({
 });
 
 const MAIL = "alche.inc2023@gmail.com";
-const MAILTO = `mailto:${MAIL}?subject=Webサイト制作の無料相談`;
+const MAILTO = "https://timerex.net/s/shuma.h08_e384/1f697619";
 
 /* --- Tokens (LP固有：ネイビー × ゴールド) --- */
 const NAVY = "#0b1f3a";
@@ -56,6 +58,8 @@ function CTA({
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm sm:text-base font-bold text-white shadow-lg shadow-amber-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/40 ${className}`}
       style={{
         backgroundImage: `linear-gradient(135deg, ${GOLD} 0%, ${GOLD_DARK} 100%)`,
@@ -81,6 +85,8 @@ function TopNav() {
         </Link>
         <a
           href={MAILTO}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden sm:inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-bold text-white"
           style={{ background: GOLD }}
         >
@@ -143,9 +149,6 @@ function Hero() {
             まずは5分の無料相談はこちら
             <ArrowRight className="h-4 w-4" />
           </CTA>
-          <p className="mt-3 text-xs text-white/60">
-            ※ メールで返信します。しつこい営業は一切ありません。
-          </p>
         </div>
       </div>
     </section>
@@ -428,12 +431,14 @@ function Portfolio() {
       label: "田中整骨院",
       desc: "清潔感と親しみやすさを重視した、地域密着型整骨院のLPサンプル。",
       url: "https://maushsh08.github.io/tanaka-seikotsu/",
+      image: portfolioTanaka,
     },
     {
       id: "hokuyo",
       label: "北陽リフォーム",
       desc: "施工実績が引き立つ、信頼感とビジュアル重視のリフォーム会社LPサンプル。",
       url: "https://maushsh08.github.io/hokuyo-reform/",
+      image: portfolioHokuyou,
     },
   ];
   const [active, setActive] = useState(tabs[0].id);
@@ -471,8 +476,16 @@ function Portfolio() {
           })}
         </div>
 
-        <div className="mt-8 max-w-3xl mx-auto rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h3 className="text-xl font-bold" style={{ color: NAVY }}>
+        <div className="mt-8 max-w-3xl mx-auto rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+          <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
+            <img
+              src={current.image}
+              alt={`${current.label} サンプルサイトのスクリーンショット`}
+              className="w-full h-auto block"
+              loading="lazy"
+            />
+          </div>
+          <h3 className="mt-6 text-xl font-bold" style={{ color: NAVY }}>
             {current.label}
           </h3>
           <p className="mt-3 text-sm text-slate-600 leading-relaxed">{current.desc}</p>
@@ -480,10 +493,8 @@ function Portfolio() {
             href={current.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-sm font-bold transition-all hover:text-white"
-            style={{ borderColor: NAVY, color: NAVY }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = NAVY)}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+            className="mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            style={{ background: NAVY }}
           >
             サンプルを見る <ExternalLink className="h-4 w-4" />
           </a>
