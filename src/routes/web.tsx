@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import heroBg from "@/assets/web-hero.jpg";
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
@@ -91,15 +92,19 @@ function TopNav() {
 }
 
 function Hero() {
-  return (
     <section className="relative overflow-hidden" style={{ background: NAVY }}>
       <div
-        className="absolute inset-0 opacity-40"
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      <div
+        className="absolute inset-0"
         style={{
-          backgroundImage: `radial-gradient(800px 400px at 90% 0%, ${GOLD}33, transparent 60%), radial-gradient(600px 400px at 0% 100%, #1e3a8a66, transparent 60%)`,
+          backgroundImage: `linear-gradient(135deg, ${NAVY}f2 0%, ${NAVY_DEEP}d9 60%, ${NAVY}b3 100%), radial-gradient(800px 400px at 90% 0%, ${GOLD}26, transparent 60%)`,
         }}
       />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8 pt-16 pb-24 sm:pt-24 sm:pb-32 text-white">
+
         <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs">
           <Sparkles className="h-3.5 w-3.5" style={{ color: GOLD }} />
           中小企業・個人事業主のためのWeb制作
