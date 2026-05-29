@@ -264,8 +264,13 @@ function About() {
     </Section>
   );
 }
-
-  const items = [
+function Service() {
+  const items: {
+    icon: typeof Smartphone;
+    title: string;
+    desc: string;
+    to?: string;
+  }[] = [
     {
       icon: Smartphone,
       title: "Androidアプリ開発",
@@ -297,7 +302,6 @@ function About() {
       title: "プロトタイプ開発",
       desc: "アイデアを動くカタチへ。意思決定を支える試作を素早くお届けします。",
     },
-  ];
   ];
   return (
     <Section
