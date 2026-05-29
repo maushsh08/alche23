@@ -13,6 +13,7 @@ import {
   Mail,
   Menu,
   X,
+  Globe,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
