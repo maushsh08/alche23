@@ -146,6 +146,12 @@ function Hero() {
             まずは5分の無料相談はこちら
             <ArrowRight className="h-4 w-4" />
           </CTA>
+          <p className="mt-4 text-sm text-white/80">
+            お急ぎの方はお電話ください。
+            <a href="tel:07032240078" className="font-bold underline-offset-4 hover:underline" style={{ color: GOLD }}>
+              070-3224-0078
+            </a>
+          </p>
         </div>
       </div>
     </section>
@@ -413,6 +419,12 @@ function Pricing() {
               <CTA className="w-full">
                 この内容で無料相談する <ArrowRight className="h-4 w-4" />
               </CTA>
+              <p className="mt-3 text-xs text-slate-600 text-center">
+                お急ぎの方はお電話ください。
+                <a href="tel:07032240078" className="font-bold underline-offset-4 hover:underline" style={{ color: GOLD_DARK }}>
+                  070-3224-0078
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -426,14 +438,14 @@ function Portfolio() {
     {
       id: "tanaka",
       label: "田中整骨院",
-      desc: "清潔感と親しみやすさを重視した、地域密着型整骨院のLPサンプル。",
+      desc: "清潔感と親しみやすさを重視した、地域密着型整骨院のコーポレートサイトサンプル。",
       url: "https://maushsh08.github.io/tanaka-seikotsu/",
       image: portfolioTanaka,
     },
     {
       id: "hokuyo",
       label: "北陽リフォーム",
-      desc: "施工実績が引き立つ、信頼感とビジュアル重視のリフォーム会社LPサンプル。",
+      desc: "施工実績が引き立つ、信頼感とビジュアル重視のリフォーム会社コーポレートサイトサンプル。",
       url: "https://maushsh08.github.io/hokuyo-reform/",
       image: portfolioHokuyou,
     },
@@ -597,7 +609,13 @@ function FinalCTA() {
             無料相談・お問い合わせ
           </CTA>
         </div>
-        <p className="mt-4 text-xs text-white/50">{MAIL}</p>
+        <p className="mt-4 text-sm text-white/80">
+          お急ぎの方はお電話ください。
+          <a href="tel:07032240078" className="font-bold underline-offset-4 hover:underline" style={{ color: GOLD }}>
+            070-3224-0078
+          </a>
+        </p>
+        <p className="mt-2 text-xs text-white/50">{MAIL}</p>
       </div>
     </section>
   );
