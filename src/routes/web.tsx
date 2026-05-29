@@ -92,7 +92,9 @@ function TopNav() {
 }
 
 function Hero() {
+  return (
     <section className="relative overflow-hidden" style={{ background: NAVY }}>
+
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
