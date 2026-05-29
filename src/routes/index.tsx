@@ -311,24 +311,39 @@ function Service() {
       desc="Androidアプリ開発を中心に、AI活用・UI/UX・MVP・プロトタイピングまで。プロダクトのフェーズに応じて柔軟にご支援します。"
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {items.map((s, i) => (
-          <div
-            key={s.title}
-            className="group relative rounded-2xl border border-border bg-card p-6 overflow-hidden hover:shadow-elevated transition-all duration-500"
-          >
-            <div className="flex items-center gap-3">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-foreground text-background">
-                <s.icon className="h-5 w-5" />
+        {items.map((s, i) => {
+          const inner = (
+            <>
+              <div className="flex items-center gap-3">
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-foreground text-background">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                <div className="text-xs text-muted-foreground">0{i + 1}</div>
+                {s.to && (
+                  <span className="ml-auto inline-flex items-center gap-1 text-[10px] font-medium tracking-widest uppercase text-[oklch(0.55_0.18_255)]">
+                    詳しく <ArrowRight className="h-3 w-3" />
+                  </span>
+                )}
               </div>
-              <div className="text-xs text-muted-foreground">0{i + 1}</div>
+              <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {s.desc}
+              </p>
+              <div className="absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-[oklch(0.7_0.15_240)]/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </>
+          );
+          const cls =
+            "group relative block rounded-2xl border border-border bg-card p-6 overflow-hidden hover:shadow-elevated transition-all duration-500";
+          return s.to ? (
+            <Link key={s.title} to={s.to} className={cls}>
+              {inner}
+            </Link>
+          ) : (
+            <div key={s.title} className={cls}>
+              {inner}
             </div>
-            <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              {s.desc}
-            </p>
-            <div className="absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-[oklch(0.7_0.15_240)]/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </div>
-        ))}
+          );
+        })}
       </div>
     </Section>
   );
