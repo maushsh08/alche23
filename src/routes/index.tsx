@@ -15,7 +15,6 @@ import {
   X,
   Globe,
 } from "lucide-react";
-import logo from "@/assets/alche-logo.png";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -72,7 +71,10 @@ function Header() {
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 font-semibold tracking-tight">
-          <img src={logo} alt="株式会社ALCHE" className="h-9 w-auto" />
+          <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-foreground text-background text-xs font-bold">
+            A
+          </span>
+          <span>ALCHE</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {NAV.map((n) => (
@@ -475,7 +477,10 @@ function Footer() {
     <footer className="border-t border-border py-10">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="株式会社ALCHE" className="h-7 w-auto" />
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-foreground text-background text-[10px] font-bold">
+            A
+          </span>
+          <span className="font-medium text-foreground">株式会社ALCHE</span>
         </div>
         <div className="flex items-center gap-6">
           <Link to="/privacy" className="hover:text-foreground transition-colors">

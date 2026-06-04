@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroBg from "@/assets/web-hero.jpg";
 import portfolioTanaka from "@/assets/portfolio-tanaka.png";
 import portfolioHokuyou from "@/assets/portfolio-hokuyou.png";
-import logo from "@/assets/alche-logo.png";
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
@@ -76,9 +75,13 @@ function TopNav() {
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-white/80 border-b border-slate-200">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 h-14 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 text-sm font-semibold" style={{ color: NAVY }}>
-          <img src={logo} alt="株式会社ALCHE" className="h-8 w-auto" />
-          <span className="text-slate-400">/</span>
-          <span>Web制作</span>
+          <span
+            className="inline-flex h-7 w-7 items-center justify-center rounded-md text-white text-xs font-bold"
+            style={{ background: NAVY }}
+          >
+            A
+          </span>
+          <span>ALCHE / Web制作</span>
         </Link>
         <a
           href={MAILTO}
@@ -146,12 +149,6 @@ function Hero() {
             まずは5分の無料相談はこちら
             <ArrowRight className="h-4 w-4" />
           </CTA>
-          <p className="mt-4 text-sm text-white/80">
-            お急ぎの方はお電話ください。
-            <a href="tel:07032240078" className="font-bold underline-offset-4 hover:underline" style={{ color: GOLD }}>
-              070-3224-0078
-            </a>
-          </p>
         </div>
       </div>
     </section>
@@ -419,12 +416,6 @@ function Pricing() {
               <CTA className="w-full">
                 この内容で無料相談する <ArrowRight className="h-4 w-4" />
               </CTA>
-              <p className="mt-3 text-xs text-slate-600 text-center">
-                お急ぎの方はお電話ください。
-                <a href="tel:07032240078" className="font-bold underline-offset-4 hover:underline" style={{ color: GOLD_DARK }}>
-                  070-3224-0078
-                </a>
-              </p>
             </div>
           </div>
         </div>
@@ -438,14 +429,14 @@ function Portfolio() {
     {
       id: "tanaka",
       label: "田中整骨院",
-      desc: "清潔感と親しみやすさを重視した、地域密着型整骨院のコーポレートサイトサンプル。",
+      desc: "清潔感と親しみやすさを重視した、地域密着型整骨院のLPサンプル。",
       url: "https://maushsh08.github.io/tanaka-seikotsu/",
       image: portfolioTanaka,
     },
     {
       id: "hokuyo",
       label: "北陽リフォーム",
-      desc: "施工実績が引き立つ、信頼感とビジュアル重視のリフォーム会社コーポレートサイトサンプル。",
+      desc: "施工実績が引き立つ、信頼感とビジュアル重視のリフォーム会社LPサンプル。",
       url: "https://maushsh08.github.io/hokuyo-reform/",
       image: portfolioHokuyou,
     },
@@ -609,13 +600,7 @@ function FinalCTA() {
             無料相談・お問い合わせ
           </CTA>
         </div>
-        <p className="mt-4 text-sm text-white/80">
-          お急ぎの方はお電話ください。
-          <a href="tel:07032240078" className="font-bold underline-offset-4 hover:underline" style={{ color: GOLD }}>
-            070-3224-0078
-          </a>
-        </p>
-        <p className="mt-2 text-xs text-white/50">{MAIL}</p>
+        <p className="mt-4 text-xs text-white/50">{MAIL}</p>
       </div>
     </section>
   );
