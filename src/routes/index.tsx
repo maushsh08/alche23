@@ -16,6 +16,7 @@ import {
   Globe,
 } from "lucide-react";
 import logo from "@/assets/alche-logo.png";
+import heroWoman from "@/assets/hero-woman.jpg.asset.json";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -131,53 +132,73 @@ function Hero() {
       id="top"
       className="relative overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32 bg-hero"
     >
-      <div className="absolute inset-0 -z-10 [mask-image:radial-gradient(closest-side,black,transparent)]">
+      {/* Mobile background image */}
+      <div
+        className="md:hidden absolute inset-0 -z-10 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroWoman.url})` }}
+        aria-hidden
+      />
+      <div className="md:hidden absolute inset-0 -z-10 bg-background/70 backdrop-blur-[2px]" aria-hidden />
+
+      <div className="hidden md:block absolute inset-0 -z-10 [mask-image:radial-gradient(closest-side,black,transparent)]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,oklch(0.92_0.008_255/0.5)_1px,transparent_1px),linear-gradient(to_bottom,oklch(0.92_0.008_255/0.5)_1px,transparent_1px)] bg-[size:48px_48px]" />
       </div>
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="animate-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-3 py-1 text-xs text-muted-foreground">
-            <Sparkles className="h-3.5 w-3.5 text-[oklch(0.55_0.18_255)]" />
-            BtoC Android × AI Native Development
-          </div>
-          <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
-            AI時代のアプリ開発を、
-            <br />
-            <span className="text-gradient">もっと速く。</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            株式会社ALCHEは、BtoC向けAndroidアプリ開発に特化したスタートアップ。
-            <br className="hidden sm:block" />
-            AI・バイブコーディングを駆使し、アイデアを最短でプロダクトに変えます。
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href={MAILTO}
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium shadow-elevated hover:translate-y-[-1px] transition-transform"
-            >
-              お問い合わせ
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-            </a>
-            <a
-              href="#service"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-6 py-3 text-sm font-medium hover:bg-muted transition-colors"
-            >
-              サービスを見る
-            </a>
+        <div className="md:grid md:grid-cols-2 md:gap-12 md:items-center">
+          <div className="animate-fade-up">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-3 py-1 text-xs text-muted-foreground">
+              <Sparkles className="h-3.5 w-3.5 text-[oklch(0.55_0.18_255)]" />
+              BtoC Android × AI Native Development
+            </div>
+            <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
+              AI時代のアプリ開発を、
+              <br />
+              <span className="text-gradient">もっと速く。</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
+              株式会社ALCHEは、BtoC向けAndroidアプリ開発に特化したスタートアップ。
+              <br className="hidden sm:block" />
+              AI・バイブコーディングを駆使し、アイデアを最短でプロダクトに変えます。
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <a
+                href={MAILTO}
+                className="group inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium shadow-elevated hover:translate-y-[-1px] transition-transform"
+              >
+                お問い合わせ
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+              <a
+                href="#service"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-6 py-3 text-sm font-medium hover:bg-muted transition-colors"
+              >
+                サービスを見る
+              </a>
+            </div>
+
+            <div className="mt-16 grid grid-cols-3 max-w-md gap-8 text-sm">
+              {[
+                { k: "Android", v: "BtoCアプリ" },
+                { k: "AI Native", v: "高速開発" },
+                { k: "Lean Team", v: "小規模・俊敏" },
+              ].map((s) => (
+                <div key={s.k}>
+                  <div className="text-xs text-muted-foreground">{s.k}</div>
+                  <div className="mt-1 font-medium">{s.v}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-3 max-w-md gap-8 text-sm">
-            {[
-              { k: "Android", v: "BtoCアプリ" },
-              { k: "AI Native", v: "高速開発" },
-              { k: "Lean Team", v: "小規模・俊敏" },
-            ].map((s) => (
-              <div key={s.k}>
-                <div className="text-xs text-muted-foreground">{s.k}</div>
-                <div className="mt-1 font-medium">{s.v}</div>
-              </div>
-            ))}
+          <div className="hidden md:block">
+            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-elevated">
+              <img
+                src={heroWoman.url}
+                alt="ビジネスシーン"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
