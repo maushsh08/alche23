@@ -16,6 +16,7 @@ import {
   Globe,
 } from "lucide-react";
 import logo from "@/assets/alche-logo.png";
+import heroWoman from "@/assets/hero-woman.jpg.asset.json";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
