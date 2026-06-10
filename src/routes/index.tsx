@@ -318,14 +318,19 @@ function Service() {
       desc: "ユーザーに愛される体験を、シンプルで美しいインターフェースで実現。",
     },
     {
-      icon: Rocket,
-      title: "MVP開発",
-      desc: "最小実用プロダクトを最短で。仮説検証のサイクルを加速します。",
+      icon: Palette,
+      title: "ブランディング",
+      desc: "プロダクトブランディング、コーポレートブランディング、採用ブランディングまで対応。",
     },
     {
-      icon: Code2,
-      title: "プロトタイプ開発",
-      desc: "アイデアを動くカタチへ。意思決定を支える試作を素早くお届けします。",
+      icon: TrendingUp,
+      title: "Webマーケティング",
+      desc: "広告運用、SEOメディア運営、SNS運用代行をトータルで支援します。",
+    },
+    {
+      icon: Handshake,
+      title: "営業代行",
+      desc: "生成AI関連やロボットAI関連の営業代理店に力を入れています。",
     },
   ];
   return (
@@ -333,7 +338,7 @@ function Service() {
       id="service"
       eyebrow="Service"
       title="提供サービス"
-      desc="Androidアプリ開発を中心に、AI活用・UI/UX・MVP・プロトタイピングまで。プロダクトのフェーズに応じて柔軟にご支援します。"
+      desc="Androidアプリ開発を中心に、ブランディング・Webマーケティング・営業代行まで。多角的なアプローチでビジネスの成長を支援します。"
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((s, i) => {
