@@ -248,19 +248,19 @@ function Section({
 function About() {
   const points = [
     {
-      icon: Smartphone,
-      title: "BtoC Androidアプリ",
-      desc: "ユーザーに直接届くプロダクトづくりを軸に、Androidプラットフォームで磨き上げます。",
+      icon: Target,
+      title: "ビジョン",
+      desc: "AIと人間の創造性を融合させ、誰もが使えるプロダクトで社会を豊かにする。",
     },
     {
-      icon: Bot,
-      title: "AI・バイブコーディング",
-      desc: "最新のAIツール群を組み合わせた開発フローで、構想から実装までを劇的に短縮。",
+      icon: Lightbulb,
+      title: "開発理念",
+      desc: "最新の技術を素早く取り入れ、ユーザーの課題を本質から解決する。",
     },
     {
-      icon: Rocket,
-      title: "スピード感ある体制",
-      desc: "小規模だからこそ意思決定が速い。プロトタイプから本番リリースまで一気通貫。",
+      icon: Heart,
+      title: "大切にする価値",
+      desc: "スピード、品質、誠実さ。少人数だからこそ実現できる、寄り添った伴走を。",
     },
   ];
   return (
