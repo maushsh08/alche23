@@ -14,6 +14,12 @@ import {
   Menu,
   X,
   Globe,
+  Target,
+  Lightbulb,
+  Heart,
+  Palette,
+  TrendingUp,
+  Handshake,
 } from "lucide-react";
 import logo from "@/assets/alche-logo.png";
 import heroWoman from "@/assets/hero-woman.jpg.asset.json";
@@ -242,19 +248,19 @@ function Section({
 function About() {
   const points = [
     {
-      icon: Smartphone,
-      title: "BtoC Androidアプリ",
-      desc: "ユーザーに直接届くプロダクトづくりを軸に、Androidプラットフォームで磨き上げます。",
+      icon: Target,
+      title: "ビジョン",
+      desc: "AIと人間の創造性を融合させ、誰もが使えるプロダクトで社会を豊かにする。",
     },
     {
-      icon: Bot,
-      title: "AI・バイブコーディング",
-      desc: "最新のAIツール群を組み合わせた開発フローで、構想から実装までを劇的に短縮。",
+      icon: Lightbulb,
+      title: "開発理念",
+      desc: "最新の技術を素早く取り入れ、ユーザーの課題を本質から解決する。",
     },
     {
-      icon: Rocket,
-      title: "スピード感ある体制",
-      desc: "小規模だからこそ意思決定が速い。プロトタイプから本番リリースまで一気通貫。",
+      icon: Heart,
+      title: "大切にする価値",
+      desc: "スピード、品質、誠実さ。少人数だからこそ実現できる、寄り添った伴走を。",
     },
   ];
   return (
@@ -312,14 +318,19 @@ function Service() {
       desc: "ユーザーに愛される体験を、シンプルで美しいインターフェースで実現。",
     },
     {
-      icon: Rocket,
-      title: "MVP開発",
-      desc: "最小実用プロダクトを最短で。仮説検証のサイクルを加速します。",
+      icon: Palette,
+      title: "ブランディング",
+      desc: "プロダクトブランディング、コーポレートブランディング、採用ブランディングまで対応。",
     },
     {
-      icon: Code2,
-      title: "プロトタイプ開発",
-      desc: "アイデアを動くカタチへ。意思決定を支える試作を素早くお届けします。",
+      icon: TrendingUp,
+      title: "Webマーケティング",
+      desc: "広告運用、SEOメディア運営、SNS運用代行をトータルで支援します。",
+    },
+    {
+      icon: Handshake,
+      title: "営業代行",
+      desc: "生成AI関連やロボットAI関連の営業代理店に力を入れています。",
     },
   ];
   return (
@@ -327,7 +338,7 @@ function Service() {
       id="service"
       eyebrow="Service"
       title="提供サービス"
-      desc="Androidアプリ開発を中心に、AI活用・UI/UX・MVP・プロトタイピングまで。プロダクトのフェーズに応じて柔軟にご支援します。"
+      desc="Androidアプリ開発を中心に、ブランディング・Webマーケティング・営業代行まで。多角的なアプローチでビジネスの成長を支援します。"
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((s, i) => {
