@@ -22,7 +22,7 @@ import {
   Handshake,
 } from "lucide-react";
 import logo from "@/assets/alche-logo.png";
-import heroWoman from "@/assets/hero-woman.jpg.asset.json";
+import heroWoman from "@/assets/hero-woman.jpg";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
