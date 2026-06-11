@@ -141,7 +141,7 @@ function Hero() {
       {/* Mobile background image */}
       <div
         className="md:hidden absolute inset-0 -z-10 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroWoman.url})` }}
+        style={{ backgroundImage: `url(${heroWoman})` }}
         aria-hidden
       />
       <div className="md:hidden absolute inset-0 -z-10 bg-background/70 backdrop-blur-[2px]" aria-hidden />
@@ -200,7 +200,7 @@ function Hero() {
           <div className="hidden md:block">
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-elevated">
               <img
-                src={heroWoman.url}
+                src={heroWoman}
                 alt="ビジネスシーン"
                 className="absolute inset-0 h-full w-full object-cover"
               />
