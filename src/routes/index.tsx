@@ -308,17 +308,8 @@ function Service() {
       to: "/web",
     },
     {
-      icon: Bot,
-      title: "AI活用開発",
-      desc: "LLM・生成AIを組み込んだ機能開発。プロダクト価値の核を作ります。",
-    },
-    {
-      icon: Layers,
-      title: "UI/UX設計",
-      desc: "ユーザーに愛される体験を、シンプルで美しいインターフェースで実現。",
-    },
-    {
       icon: Palette,
+
       title: "ブランディング",
       desc: "プロダクトブランディング、コーポレートブランディング、採用ブランディングまで対応。",
     },
