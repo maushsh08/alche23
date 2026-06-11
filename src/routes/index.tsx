@@ -22,7 +22,7 @@ import {
   Handshake,
 } from "lucide-react";
 import logo from "@/assets/alche-logo.png";
-import heroWoman from "@/assets/hero-woman.jpg.asset.json";
+import heroWoman from "@/assets/hero-woman.jpg";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -141,7 +141,7 @@ function Hero() {
       {/* Mobile background image */}
       <div
         className="md:hidden absolute inset-0 -z-10 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroWoman.url})` }}
+        style={{ backgroundImage: `url(${heroWoman})` }}
         aria-hidden
       />
       <div className="md:hidden absolute inset-0 -z-10 bg-background/70 backdrop-blur-[2px]" aria-hidden />
@@ -200,7 +200,7 @@ function Hero() {
           <div className="hidden md:block">
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-elevated">
               <img
-                src={heroWoman.url}
+                src={heroWoman}
                 alt="ビジネスシーン"
                 className="absolute inset-0 h-full w-full object-cover"
               />
@@ -308,17 +308,8 @@ function Service() {
       to: "/web",
     },
     {
-      icon: Bot,
-      title: "AI活用開発",
-      desc: "LLM・生成AIを組み込んだ機能開発。プロダクト価値の核を作ります。",
-    },
-    {
-      icon: Layers,
-      title: "UI/UX設計",
-      desc: "ユーザーに愛される体験を、シンプルで美しいインターフェースで実現。",
-    },
-    {
       icon: Palette,
+
       title: "ブランディング",
       desc: "プロダクトブランディング、コーポレートブランディング、採用ブランディングまで対応。",
     },
