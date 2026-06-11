@@ -91,10 +91,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const matches = Route.useMatches();
+  
 
   useEffect(() => {
-    const head = (Route.options.head?.({ matches } as never) ?? {}) as {
+    const head = (Route.options.head?.({} as never) ?? {}) as {
       meta?: Array<Record<string, string>>;
     };
     const metas = head.meta ?? [];
@@ -114,7 +114,7 @@ function RootComponent() {
       }
       if (m.content) el.setAttribute("content", m.content);
     }
-  }, [matches]);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
