@@ -1,14 +1,11 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
-
-import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -85,35 +82,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f76026cd-41d8-44bf-8af0-865bbd1339a5/id-preview-b2b06aad--c6b6be53-de20-4008-8ff1-d12d4fe6d1b4.lovable.app-1778214410463.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f76026cd-41d8-44bf-8af0-865bbd1339a5/id-preview-b2b06aad--c6b6be53-de20-4008-8ff1-d12d4fe6d1b4.lovable.app-1778214410463.png" },
     ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
+    links: [],
   }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="ja">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  
+
+  useEffect(() => {
+    const head = (Route.options.head?.({} as never) ?? {}) as {
+      meta?: Array<Record<string, string>>;
+    };
+    const metas = head.meta ?? [];
+    for (const m of metas) {
+      if (m.title) {
+        document.title = m.title;
+        continue;
+      }
+      const key = m.name ? "name" : m.property ? "property" : null;
+      if (!key) continue;
+      const val = m[key];
+      let el = document.head.querySelector<HTMLMetaElement>(`meta[${key}="${val}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(key, val);
+        document.head.appendChild(el);
+      }
+      if (m.content) el.setAttribute("content", m.content);
+    }
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -121,3 +122,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+
